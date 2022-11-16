@@ -1,20 +1,79 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-header>
+    <ion-img class="imagenportada" src="assets/logohospitsl.jpg"></ion-img>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Menu</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <div id="container">
+    </div>
+
+    <ion-content padding>
+        <ion-card>
+            <ion-card-content>
+
+                <ion-card-title>
+                    ¿Dónde puedo consultar?
+
+                    <ion-img class="imagenportada" src="assets/HospiO.jpg"></ion-img>
+
+
+
+                </ion-card-title>
+                <p>
+                    En la sala de consulta para diabeticos bobo
+                </p>
+            </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+
+            <ion-card-content>
+                <ion-card-title>
+                    Ya casi fun
+                    <ion-img class="imagenportada" src="assets/HospiOv.jpg"></ion-img>
+                </ion-card-title>
+                <p>
+                    Morel
+                </p>
+            </ion-card-content>
+
+            <ion-footer>
+                <!--<div class="contenedor-ion-footer">-->
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="12" size-sm="4">
+                            <div class="content-foo">
+                                <h4>Telefono</h4>
+                                <p>0976546327</p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="12" size-sm="4">
+                            <div class="content-foo">
+                                <h4>Email</h4>
+                                <p>hospiovipy@gmail.com</p>
+                            </div>
+                        </ion-col>
+                        <ion-col size="12" size-sm="4">
+                            <div class="content-foo">
+                                <h4>Direccion</h4>
+                                <p>Coronel Oviedo</p>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+
+
+                <!--</div>-->
+                <h2 class="titulo-final">&copy; SNPP | Pagina Web Hospital</h2>
+            </ion-footer>
+
+        </ion-card>
+    </ion-content>

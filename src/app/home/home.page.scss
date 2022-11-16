@@ -25,3 +25,52 @@
 #container a {
   text-decoration: none;
 }
+
+
+ion-footer{
+  background-color: #414141;
+  padding: 60px 0 30px 0;
+  margin: auto;
+  overflow: hidden;
+}
+
+.contenedor-ion-footer{
+  display: flex;
+  width: 90%;
+  justify-content: space-evenly;
+  margin: auto;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #ccc;
+}
+
+.content-foo{
+  text-align: center;
+  color: #ccc;
+}
+
+.content-foo h4{
+  color: #fff;
+  border-bottom: 1px solid #af20d3;
+  padding-bottom: 5px;
+  padding-bottom: 10px;
+}
+
+.titulo-final{
+  text-align: center;
+  font-size: 24px;
+  margin: 24px 0 0 0;
+  color: #9797;
+}
+
+.contenedor-ion-footer{
+  flex-direction: column;
+  }
+  .content-foo{
+      margin-bottom: 20px;
+  }
+
+.imagenportada{
+  width: 70%;
+ margin: auto;
+}
+
