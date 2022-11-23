@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  
+slideOpts = {
+  autoplay: {
+    delay: 5000
+  }
+};
+
   constructor() {}
 
 }

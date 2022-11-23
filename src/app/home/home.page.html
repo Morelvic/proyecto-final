@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-img class="imagenportada" src="assets/logohospitsl.jpg"></ion-img>
+    <ion-img class="cabecera" src="assets/logohospitsl.jpg"></ion-img>
     <ion-toolbar>
 
 
@@ -18,52 +18,89 @@
         <ion-card>
             <ion-card-content>
 
-                <ion-card-title>
-                    ¿Dónde puedo consultar?
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="12" size-sm="12">
+                            <div class="content-faa">
 
-                    <ion-img class="imagenportada" src="assets/HospiO.jpg"></ion-img>
 
 
 
-                </ion-card-title>
-                <p>
-                    En la sala de consulta para diabeticos bobo
-                </p>
-            </ion-card-content>
-        </ion-card>
 
-        <ion-card>
 
-            <ion-card-content>
-                <ion-card-title>
-                    Ya casi fun
-                    <ion-img class="imagenportada" src="assets/HospiOv.jpg"></ion-img>
-                </ion-card-title>
-                <p>
-                    Morel
-                </p>
+                                <ion-slides pager="true" [options]="slideOpts">
+                                    <ion-slide>
+                                        <ion-img class="imagenportada" src="assets/HospiO.jpg"></ion-img>
+                                    </ion-slide>
+                                    <ion-slide>
+                                        <ion-img class="imagenportada" src="assets/HospiOv.jpg"></ion-img>
+                                    </ion-slide>
+                                    <ion-slide>
+                                        <ion-img class="imagenportada" src="assets/HospiO.jpg"></ion-img>
+                                    </ion-slide>
+                                </ion-slides>
+
+                                <!--<ion-img class="imagenportada" src="assets/HospiO.jpg"></ion-img>
+                                <h1>Hospital Regional de Coronel Oviedo</h1>
+                            </div>
+                        </ion-col>
+                        
+                        <ion-col size="12" size-sm="12">
+                            <div class="content-faa">
+                                
+                                <ion-img class="imagenportada" src="assets/HospiOv.jpg"></ion-img>
+                                <h1>¿Dónde puedo consultar y tener una respuesta?</h1>-->
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+
+
+
+
+
+
+
+
             </ion-card-content>
 
             <ion-footer>
                 <!--<div class="contenedor-ion-footer">-->
-                <ion-grid>
-                    <ion-row>
-                        <ion-col size="12" size-sm="4">
-                            <div class="content-foo">
-                                <h4>Telefono</h4>
-                                <p>0976546327</p>
+                <ion-grid class="grilla-pie">
+                    <ion-row class="ion-justify-content-center">
+                        <ion-col size="12" size-md="4" class="content-foo">
+
+                            <div class="titulo-pie">Contactanos</div>
+
+                            <div class="content">
+                                <div>Eugenio A. Garay - Cnel.Oviedo</div>
+                                <div>0521 200 033</div>
+                            </div>
+
+                        </ion-col>
+                        <ion-col size="12" size-md="4" class="content-foo">
+
+                            <div class="titulo-pie">Información</div>
+
+                            <div class="content">
+                                <div>Ambulancia SEME - 141</div>
+                                <div>Hospital de trauma - (0521)204 800</div>
+                                <div>Instituto de Cardiologia - (021)292 532</div>
+                                <div>Diabetologia (0986)783248</div>
                             </div>
                         </ion-col>
-                        <ion-col size="12" size-sm="4">
-                            <div class="content-foo">
-                                <h4>Email</h4>
-                                <p>hospiovipy@gmail.com</p>
-                            </div>
-                        </ion-col>
-                        <ion-col size="12" size-sm="4">
-                            <div class="content-foo">
-                                <h4>Direccion</h4>
-                                <p>Coronel Oviedo</p>
+                        <ion-col size="12" size-md="4" class="content-foo">
+
+                            <div class="titulo-pie">Siguenos</div>
+
+                            <div class="content">
+
+
+                                <div><a href="https://www.paho.org/es/paraguay" ion-button>Organización Panamericana de
+                                        la Salud</a></div>
+                                <div><a href="https://www.who.int/es" ion-button>Organización Mundial de la Salud</a>
+                                </div>
                             </div>
                         </ion-col>
                     </ion-row>
@@ -72,7 +109,7 @@
 
 
                 <!--</div>-->
-                <h2 class="titulo-final">&copy; SNPP | Pagina Web Hospital</h2>
+                <h2 class="titulo-final">&copy; Página web oficial del Hospital Regional de Coronel Oviedo</h2>
             </ion-footer>
 
         </ion-card>

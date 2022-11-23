@@ -29,9 +29,10 @@
 
 ion-footer{
   background-color: #414141;
-  padding: 60px 0 30px 0;
-  margin: auto;
-  overflow: hidden;
+  //padding: 60px 0 30px 0;
+  //margin: auto;
+  //overflow: hidden;
+  //text-align: center;
 }
 
 .contenedor-ion-footer{
@@ -43,16 +44,24 @@ ion-footer{
   border-bottom: 1px solid #ccc;
 }
 
-.content-foo{
+.content-faa{
   text-align: center;
   color: #ccc;
+  width: 70%;
+  margin: auto;
 }
 
-.content-foo h4{
+.content-foo{
+  text-align: center;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.content-foo .titulo-pie{
   color: #fff;
   border-bottom: 1px solid #af20d3;
-  padding-bottom: 5px;
   padding-bottom: 10px;
+  font-size: x-large;
 }
 
 .titulo-final{
@@ -65,12 +74,44 @@ ion-footer{
 .contenedor-ion-footer{
   flex-direction: column;
   }
-  .content-foo{
-      margin-bottom: 20px;
-  }
+  
 
 .imagenportada{
-  width: 70%;
- margin: auto;
+  height: 50%;
+  width: 80%;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.6);
+  padding: auto;
+  margin: auto;
 }
 
+.content{
+  text-align:justify;
+  color: #ccc;
+  //width: 70%;
+  padding-top: 10px;
+}
+
+.pie{
+  padding: 0px;
+  margin: 0px;
+}
+
+.cabecera{
+  height: 100px;
+}
+
+.grilla-pie{
+  --ion-grid-padding: 20px
+}
+
+@media (max-width:768px){
+  #intro, #equipo {
+      width: 90% !important; 
+  }
+  .servicio-fila{
+      width: 100% !important;
+      text-align: center;
+  }
+}
