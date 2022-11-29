@@ -51,6 +51,21 @@ ion-footer{
   margin: auto;
 }
 
+.slider{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.contenedor-banner{
+  //display: block;
+  //text-align: center;
+  justify-content: center;
+  align-items: center;
+  //color: #ccc;
+  width: 100%;
+  height: 400px;
+  //margin: 5px;
+}
 .content-foo{
   text-align: center;
   padding-right: 30px;
@@ -77,13 +92,13 @@ ion-footer{
   
 
 .imagenportada{
-  height: 50%;
-  width: 80%;
+  //height: 50%;
+  width: 100%;
   object-fit: cover;
-  border-radius: 5px;
-  box-shadow: 0 0 6px 0 rgba(0,0,0,0.6);
+  //border-radius: 5px;
+  //box-shadow: 0 0 6px 0 rgba(0,0,0,0.6);
   padding: auto;
-  margin: auto;
+  
 }
 
 .content{
@@ -102,8 +117,12 @@ ion-footer{
   height: 100px;
 }
 
+.fila-pie{
+  background-color: #414141;
+}
+
 .grilla-pie{
-  --ion-grid-padding: 20px
+  --ion-grid-padding: 10px
 }
 
 @media (max-width:768px){
@@ -114,4 +133,9 @@ ion-footer{
       width: 100% !important;
       text-align: center;
   }
+}
+
+
+.alturatarjeta{
+  height: 450px;
 }

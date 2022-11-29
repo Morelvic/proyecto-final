@@ -1,8 +1,6 @@
 <ion-header>
     <ion-img class="cabecera" src="assets/logohospitsl.jpg"></ion-img>
     <ion-toolbar>
-
-
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
@@ -10,63 +8,134 @@
 
     </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
-    <div id="container">
-    </div>
 
-    <ion-content padding>
-        <ion-card>
-            <ion-card-content>
-
-                <ion-grid>
-                    <ion-row>
-                        <ion-col size="12" size-sm="12">
-                            <div class="content-faa">
-
-
-
-
-
-
-                                <ion-slides pager="true" [options]="slideOpts">
-                                    <ion-slide>
-                                        <ion-img class="imagenportada" src="assets/HospiO.jpg"></ion-img>
-                                    </ion-slide>
-                                    <ion-slide>
-                                        <ion-img class="imagenportada" src="assets/HospiOv.jpg"></ion-img>
-                                    </ion-slide>
-                                    <ion-slide>
-                                        <ion-img class="imagenportada" src="assets/HospiO.jpg"></ion-img>
-                                    </ion-slide>
-                                </ion-slides>
-
-                                <!--<ion-img class="imagenportada" src="assets/HospiO.jpg"></ion-img>
-                                <h1>Hospital Regional de Coronel Oviedo</h1>
-                            </div>
-                        </ion-col>
-                        
-                        <ion-col size="12" size-sm="12">
-                            <div class="content-faa">
-                                
-                                <ion-img class="imagenportada" src="assets/HospiOv.jpg"></ion-img>
-                                <h1>¿Dónde puedo consultar y tener una respuesta?</h1>-->
-                            </div>
-                        </ion-col>
-                    </ion-row>
-                </ion-grid>
+<ion-content>
+    <ion-slides class="slider" pager="true" [options]="slideOpts">
+        <ion-slide>
+            <div class="contenedor-banner">
+                <ion-img class="imagenportada" src="assets/hospital1.jpeg"></ion-img>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="contenedor-banner">
+                <ion-img class="imagenportada" src="assets/agendamientos.jpg"></ion-img>
+            </div>
+        </ion-slide>
+        <ion-slide>
+            <div class="contenedor-banner">
+                <ion-img class="imagenportada" src="assets/diabetes.jpg"></ion-img>
+            </div>
+        </ion-slide>
+    </ion-slides>
 
 
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-card class="alturatarjeta">
+                    <ion-card-header>
+                        <ion-card-title>CAMPAÑA DE SALUD</ion-card-title>
+                        <ion-card-subtitle>
+                            <ion-slide>
+                                <ion-img class="imagenprueba" src="assets/bienestar.jpg"></ion-img>
+                            </ion-slide>
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <div><a href="https://www.mspbs.gov.py/octubre-rosa.html" ion-button>Octubre Rosa</a></div>
+                    </ion-card-content>
+                    <ion-card-content>
+                        <div><a href="https://www.mspbs.gov.py/lactancia-materna.html" ion-button>Semana Nacional de
+                                Lactancia Materna</a></div>
+                    </ion-card-content>
+                    <ion-card-content>
+                        <div><a href="https://www.mspbs.gov.py/dengue-zika-chikungunya.html"
+                                ion-button>dengue-zika-chikungunya</a>
+                        </div>
+                    </ion-card-content>
+                    <ion-card-content>
+                        <div><a href="https://incan.mspbs.gov.py/guias/" ion-button>Guia de Diagnostico y Tratamiento
+                                del Cancer de Mama</a></div>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+
+            <ion-col>
+                <ion-card class="alturatarjeta">
+                    <ion-card-header>
+                        <ion-card-title>CALENDARIO DE VACUNAS</ion-card-title>
+                        <ion-card-subtitle>
+                            <ion-slide>
+                                <ion-img class="" src="assets/mas-vacuna.jpg"></ion-img>
+                            </ion-slide>
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <div><a href="https://www.mspbs.gov.py/pai-sobre-las-vacunas.html" ion-button>¿Qué vacuna debo
+                                tener?</a></div>
+                    </ion-card-content>
+                    <ion-card-content>
+                        <div><a href="https://www.mspbs.gov.py/libreta-vacunacion-digital.html" ion-button>Libreta
+                                Digital de Vacunación</a></div>
+                    </ion-card-content>
+                    <ion-card-content>
+                        <div><a href="https://www.vacunate.gov.py/" ion-button>Centros de Vacunación - Influenza</a>
+                        </div>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
 
 
+            <ion-col>
+                <ion-card class="alturatarjeta">
+                    <ion-card-header>
+                        <ion-card-title>TRÁMITES Y SERVICIOS</ion-card-title>
+                        <ion-card-subtitle>
+                            <ion-slide>
+                                <ion-img class="" src="assets/sau.jpg"></ion-img>
+                            </ion-slide>
+
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <div><a href="https://www.mspbs.gov.py/pagos.html" ion-button>Renovación de
+                                Registros - Certificados de Reposos - Lactancia materna- Certificados de Salud</a></div>
+                    </ion-card-content>
+                    <ion-card-content>
+                        <div><a href="https://www.mspbs.gov.py/proveedores-empresa.html" ion-button>Proveedores</a>
+                        </div>
+                    </ion-card-content>
+                    <div><a href="https://www.mspbs.gov.py/dnvs" ion-button>Vigilancia Sanitaria</a></div>
+                </ion-card>
+            </ion-col>
 
 
+            <ion-col>
+                <ion-card class="alturatarjeta">
+                    <ion-card-header>
+                        <ion-card-title>ATENCIÓN AL CLIENTE</ion-card-title>
+                        <ion-card-subtitle>
+                            <ion-slide>
+                                <ion-img class="" src="assets/tramites.jpg"></ion-img>
+                            </ion-slide>
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <div><a href="https://www.mspbs.gov.py/atencion-usuario.html" ion-button>Denuncias y
+                                Reclamos</a></div>
+                    </ion-card-content>
+                    <ion-card-content>
+                        <div><a href="http://dgvs.mspbs.gov.py/page/#viajeros.html" ion-button>Salud del Viajero</a>
+                        </div>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
-
-
-            </ion-card-content>
-
-            <ion-footer>
-                <!--<div class="contenedor-ion-footer">-->
+    <ion-grid style="width: 100%;">
+        <ion-row class="fila-pie">
+            <ion-col>
                 <ion-grid class="grilla-pie">
                     <ion-row class="ion-justify-content-center">
                         <ion-col size="12" size-md="4" class="content-foo">
@@ -110,7 +179,7 @@
 
                 <!--</div>-->
                 <h2 class="titulo-final">&copy; Página web oficial del Hospital Regional de Coronel Oviedo</h2>
-            </ion-footer>
-
-        </ion-card>
-    </ion-content>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

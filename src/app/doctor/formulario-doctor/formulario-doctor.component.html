@@ -1,3 +1,31 @@
-<p>
-  formulario-doctor works!
-</p>
+v<form [formGroup]="form">
+  <ion-list>
+    <ion-item fill="outline">
+      <ion-label position="floating">Codigo:</ion-label>
+      <ion-input inputmode="number" type="number" placeholder="Ingresar..." formControlName="ciCtrl"></ion-input>
+      <ion-note slot="error" *ngIf="form.controls.ciCtrl.touched">Ingrese el Codigo</ion-note>
+    </ion-item>
+    <ion-item fill="outline" class="item-espaciado">
+      <ion-label position="floating">Titulo</ion-label>
+      <ion-input inputmode="text" type="text"placeholder="Ingresar..." formControlName="nombreCtrl"></ion-input>
+      <ion-note slot="error"*ngIf="form.controls.nombreCtrl.touched">Ingrese un titulo</ion-note>
+    </ion-item>
+    <ion-item fill="outline" class="item-espaciado">
+      <ion-label position="floating">Autor</ion-label>
+      <ion-select formControlName="cipacienteCtrl">
+        <ion-select-option *ngFor="let autor of listaPaciente" 
+        [value]="paciente.ci">{{paciente.nombre}}</ion-select-option>
+      </ion-select>
+      <ion-note slot="error"*ngIf="form.controls.cipacienteCtrl.touched">Seleccione un autor</ion-note>
+    </ion-item>
+    <ion-item fill="outline" class="item-espaciado">
+      <ion-label position="floating">No.Paginas:</ion-label>
+      <ion-input inputmode="number" type="number"placeholder="Ingresar..." formControlName="paginasCtrl"></ion-input>
+      <ion-note slot="error"*ngIf="form.controls.paginasCtrl.touched">Ingrese el numero de paginas</ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="guardar()">
+    <ion-icon name="save" slot="start"></ion-icon>
+    Guardar
+  </ion-button>
+</form>
