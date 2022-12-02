@@ -33,6 +33,9 @@ listaDoctor: any;
     private serviciosToast: ToastController,
     private sevicioDoctor: DoctorService
   ) { }
+
+
+  
   private cargarPaciente() {
     this.servicioPaciente.get().subscribe({
       next: (paciente) => {

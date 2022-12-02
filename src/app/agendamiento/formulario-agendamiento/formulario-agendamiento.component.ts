@@ -2,8 +2,11 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { Agendamiento } from 'src/app/interfaces/agendamiento.interface';
-
+import { Paciente } from 'src/app/interfaces/paciente.interface';
 import { AgendamientoService } from 'src/app/servicios/agendamiento.service';
+import { PacienteService } from 'src/app/servicios/paciente.service';
+import { Doctor } from 'src/app/interfaces/doctor.interface';
+import { DoctorService } from 'src/app/servicios/doctor.service';
 
 @Component({
   selector: 'app-formulario-agendamiento',
@@ -16,7 +19,8 @@ export class FormularioAgendamientoComponent implements OnInit {
   @Output()
   recargar = new EventEmitter<boolean>();
   public modo: "Registrar" | "Editar" = "Registrar";
-  public listaAgendamiento: Agendamiento[] = [];
+  public listaPaciente: Paciente[] = [];
+  public listaDoctor: Doctor[] = [];
 
   public form: FormGroup = new FormGroup({
     idagendamientoCtrl: new FormControl<number>(null, Validators.required),
@@ -26,20 +30,41 @@ export class FormularioAgendamientoComponent implements OnInit {
     doctorciCtrl: new FormControl<number>(null, Validators.required),
   });
 
+
   constructor(
-    private servicioAgendamiento: AgendamientoService,
+    private servicioPaciente: PacienteService,
     private serviciosToast: ToastController,
-    private sevicioAgendamiento: AgendamientoService
+    private sevicioAgendamiento: AgendamientoService,
+    private servicioDoctor: DoctorService
   ) { }
-  private cargarAgendamiento() {
-    this.servicioAgendamiento.get().subscribe({
-      next: (agendamiento) => {
-        this.listaAgendamiento = agendamiento;
+  private cargarPaciente() {
+    this.servicioPaciente.get().subscribe({
+      next: (paciente) => {
+        /*console.log(paciente);*/
+        this.listaPaciente = paciente;
+      },
+      
+      error: (e) => {
+        console.error('Error al cargar', e);
+        this.serviciosToast.create({
+          header: 'Error al cargar Paciente',
+          message: e.error,
+          color: 'danger'
+        })
+      }
+    });
+  }
+
+  private cargarDoctor() {
+    this.servicioDoctor.get().subscribe({
+      next: (doctor) => {
+        /*console.log(paciente);*/
+        this.listaDoctor = doctor;
       },
       error: (e) => {
         console.error('Error al cargar', e);
         this.serviciosToast.create({
-          header: 'Error al cargar Agendamiento',
+          header: 'Error al cargar Doctor',
           message: e.error,
           color: 'danger'
         })
@@ -47,7 +72,8 @@ export class FormularioAgendamientoComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.cargarAgendamiento();
+    this.cargarPaciente();
+    this.cargarDoctor();
   }
   guardar() {
     this.form.markAllAsTouched();
@@ -60,13 +86,13 @@ export class FormularioAgendamientoComponent implements OnInit {
 
     }
   }
-  private registrar() {
+   registrar() {
     const agendamiento: Agendamiento = {
-      idagendamiento: this.form.controls.idagendamientoCtrl.value,
+      idagendamiento: 0,
       fechaagendamiento: this.form.controls.fechaagendamientoCtrl.value,
-      fecha_confirmacion: this.form.controls.fecha_confirmacionCtrl.value,
-      paciente_ci: this.form.controls.paciente_ciCtrl.value,
-      doctor_ci: this.form.controls.doctor_ciCtrl.value
+      fecha_confirmacion: this.form.controls.fechaagendamientoCtrl.value,
+      paciente_ci: this.form.controls.pacienteciCtrl.value,
+      doctor_ci: this.form.controls.doctorciCtrl.value
     }
     this.sevicioAgendamiento.post(agendamiento).subscribe({
       next: () => {

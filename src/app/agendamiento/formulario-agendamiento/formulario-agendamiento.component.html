@@ -1,41 +1,36 @@
 <form [formGroup]="form">
   <ion-list>
-    <ion-item fill="outline">
-      <ion-label position="floating">Codigo: </ion-label>
-      <ion-input inputmode="number" type="number" placeholder="Ingresar..." formControlName="idagendamientoCtrl"></ion-input>
-      <ion-note slot="error" *ngIf="form.controls.idagendamientoCtrl.touched">Ingrese el Codigo</ion-note>
-    </ion-item>
-
+    
     <ion-item fill="outline" class="item-espaciado">
       <ion-label position="floating">Paciente</ion-label>
       <ion-select formControlName="pacienteciCtrl">
-      <ion-select-option>Juan Perez</ion-select-option>
-        <ion-select-option>Ana Diaz</ion-select-option>
+        <ion-select-option *ngFor="let paciente of listaPaciente" 
+        [value]="paciente.ci">{{paciente.nombre}}</ion-select-option>
       </ion-select>
-      <ion-note slot="error"*ngIf="form.controls.idagendamientoCtrl.touched">Seleccione un agendamiento</ion-note>
+      <ion-note slot="error" *ngIf="form.controls.pacienteciCtrl.touched">Seleccione un paciente</ion-note>
     </ion-item>
 
-    
-      <ion-select-option *ngFor="let agendamiento of listaAgendamiento" 
-        [value]="agendamiento.idagendamiento">{{agendamiento.paciente}}
-      </ion-select-option>
-
+  
 
     <ion-item fill="outline" class="item-espaciado">
       <ion-label position="floating">Doctor</ion-label>
-      <ion-select formControlName="pacienteciCtrl">
-        <!--<ion-select-option *ngFor="let agendamiento of listaAgendamiento" 
-        [value]="agendamiento.idagendamiento">{{agendamiento.fechaagendamiento}}</ion-select-option>-->
-        <ion-select-option>Doctor Fulano</ion-select-option>
-        <ion-select-option>Doctor Mengano</ion-select-option>
+      <ion-select formControlName="doctorciCtrl">
+        <ion-select-option *ngFor="let doctor of listaDoctor" 
+        [value]="doctor.ci">{{doctor.nombre}}</ion-select-option>
       </ion-select>
-      <ion-note slot="error"*ngIf="form.controls.idagendamientoCtrl.touched">Seleccione un agendamiento</ion-note>
+      <ion-note slot="error" *ngIf="form.controls.doctorciCtrl.touched">Seleccione un doctor</ion-note>
+    </ion-item >
+
+    <ion-item fill="outline" class="item-espaciado">
+      <ion-label position="floating">Fecha Agendamiento</ion-label>
+      <ion-datetime formControlName="fechaagendamientoCtrl" presentation="date-time" [preferWheel]="true"></ion-datetime> 
+
     </ion-item>
 
 
   </ion-list>
 
-  <ion-button expand="full" (click)="guardar()">
+  <ion-button expand="full" (click)="registrar()">
     <ion-icon name="save" slot="start"></ion-icon>
     Guardar
   </ion-button>
