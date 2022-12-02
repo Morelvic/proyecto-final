@@ -7,14 +7,21 @@ import { IonicModule } from '@ionic/angular';
 import { AgendamientoPageRoutingModule } from './agendamiento-routing.module';
 
 import { AgendamientoPage } from './agendamiento.page';
+import { AgendamientoService } from '../servicios/agendamiento.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormularioAgendamientoComponent } from './formulario-agendamiento/formulario-agendamiento.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AgendamientoPageRoutingModule
+    AgendamientoPageRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  declarations: [AgendamientoPage]
+  declarations: [AgendamientoPage, FormularioAgendamientoComponent],
+  providers: [AgendamientoService]
 })
 export class AgendamientoPageModule {}

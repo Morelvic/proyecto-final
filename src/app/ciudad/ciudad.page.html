@@ -3,8 +3,8 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>doctor</ion-title>
-    <ion-progress-bar *ngIf="cargandoDoctor" type="indeterminate"></ion-progress-bar>
+    <ion-title>ciudad</ion-title>
+    <ion-progress-bar *ngIf="cargandoCiudad" type="indeterminate"></ion-progress-bar>
   </ion-toolbar>
 </ion-header>
 
@@ -14,23 +14,23 @@
     <ion-icon name="add"></ion-icon>
   </ion-fab-button> 
   </ion-fab>
-  <ion-refresher slot="fixed" (ionRefresh)="cargarDoctor()">
+  <ion-refresher slot="fixed" (ionRefresh)="cargarCiudad()">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
   <ion-list>
-    <ion-item-sliding *ngFor=" let doctor of listaDoctor">
-      <ion-item button (click)="editar(doctor)">
-        <ion-note slot="start">{{doctor.ci}}</ion-note>
+    <ion-item-sliding *ngFor=" let ciudadf listaCiudad">
+      <ion-item button (click)="editar(ciudad)">
+        <ion-note slot="start">{{ciudad.id}}</ion-note>
         <ion-label>
-          <h1>{{doctor.nombre}</h1>
-          <p>{{doctor.apellido}}</p>
+          <h1>{{ciudad.nombre}</h1>
+        
         </ion-label>
-        <ion-badge color="medium" slot="end">{{doctor.especialidad}} pag.</ion-badge>
+        <ion-badge color="medium" slot="end">{{ciudad.nombre}} pag.</ion-badge>
       </ion-item>
       <ion-item-options>
         <ion-item-option color="danger">
-          <ion-icon slot="icon-only" name="trash" (click)="ConfirmarEliminacion(doctor)"></ion-icon>
+          <ion-icon slot="icon-only" name="trash" (click)="ConfirmarEliminacion(ciudad)"></ion-icon>
         </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
@@ -41,7 +41,7 @@
 
       <ion-header>
         <ion-toolbar>
-        <ion-title>{{modoFormulario}} Doctor</ion-title>
+        <ion-title>{{modoFormulario}} Ciudad</ion-title>
           <ion-buttons slot="end"(click)="modalVisible=false">
             <ion-button>Cerrar</ion-button>
           </ion-buttons>
@@ -49,7 +49,7 @@
       </ion-header>
       <ion-content>
         <div style="padding: 10px;">
-          <app-formulario-doctor (recargar)="cargarDoctor()"></app-formulario-doctor>
+          <app-formulario-ciudad (recargar)="cargarCiudad()"></app-formulario-ciudad>
         </div>
       </ion-content>
     </ng-template>

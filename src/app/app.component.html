@@ -2,115 +2,101 @@
 
   <ion-menu menuId="main-menu" content-id="main">
     <ion-header>
-      <ion-toolbar color="primary">
+      <ion-toolbar color="medium">
         <ion-title>Hospital</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
       <ion-list>
-        <ion-item color="medium">
+        <ion-item color="primary">
           <ion-icon name="home-outline" slot="start"></ion-icon>
-          
-            <ion-label>Inicio</ion-label>
-          
+          <ion-label>Inicio</ion-label>
         </ion-item>
+
+    <ion-item color="medium">
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      <ion-menu-toggle autoHide="false">
+        <ion-button routerLink="/agendamiento" color="green">Agendamiento</ion-button>
+      </ion-menu-toggle>
+    </ion-item>
+
+    <ion-item color="medium">
+      <ion-icon name="pulse-outline" slot="start"></ion-icon>
+      <ion-menu-toggle autoHide="false">
+      <ion-button routerLink="/doctor" color="green">Doctor</ion-button>
+    </ion-menu-toggle>
+    </ion-item>
+
+    <ion-item color="medium">
+      <ion-icon name="earth-outline" slot="start"></ion-icon>
+      <ion-menu-toggle autoHide="false">
+      <ion-button routerLink="/ciudad" color="green">Ciudad</ion-button>
+    </ion-menu-toggle>
+    </ion-item>
+
+    <ion-item color="medium">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-menu-toggle autoHide="false">
+      <ion-button routerLink="/paciente" color="green">Paciente</ion-button>
+    </ion-menu-toggle>
+    </ion-item>
+
+
 
         <ion-accordion-group>
           <ion-accordion value="first">
             <ion-item slot="header" color="primary">
-              <ion-label>Programas de Salud</ion-label>
+              <ion-label>Enlaces</ion-label>
             </ion-item>
             <div class="ion-padding" slot="content">
+
               <ion-button fill="clear"
                 href="https://es-es.facebook.com/people/Programa-Nacional-de-Diabetes-Paraguay/100064656456526/"
-                ion-button fill="clear">Programa Nacional de Diabetes </ion-button>
-            </div>
-          </ion-accordion>
-          <ion-accordion value="second">
-            <ion-item slot="header" color="primary">
-              <ion-label>Mi Salud</ion-label>
-            </ion-item>
-            <div class="ion-padding" slot="content">
-              <ion-button fill="clear"
+                ion-button fill="clear">Programa Nacional de Diabetes 
+              </ion-button>
+
+                <ion-button fill="clear"
                 href="https://www.asefasalud.es/servicios/bienestar-y-salud/estilo-de-vida-saludable" ion-button
-                fill="clear">Vida saludable</ion-button>
-            </div>
-            <div class="ion-padding" slot="content">
-              <ion-button fill="clear"
+                fill="clear">Vida saludable
+              </ion-button>
+
+                <ion-button fill="clear"
                 href="https://www.mayoclinic.org/es-es/diseases-conditions/type-2-diabetes/in-depth/diabetes-prevention/art-20047639"
-                ion-button fill="clear">Prevencion de la Diabetes</ion-button>
-            </div>
-          </ion-accordion>
-
-          <ion-accordion value="third">
-            <ion-item slot="header" color="primary">
-              <ion-label>Sala de Prensa</ion-label>
-            </ion-item>
-            <div class="ion-padding" slot="content">
-              <ion-button fill="clear" href="https://diabetes.mspbs.gov.py/" ion-button fill="clear">Noticias
+                ion-button fill="clear">Prevencion de la Diabetes
               </ion-button>
-            </div>
-            <div class="ion-padding" slot="content">
-              <ion-button fill="clear" href="https://www.mspbs.gov.py/calendario-de-salud.html" ion-button fill="clear">
-                Calendario de Salud</ion-button>
-            </div>
-            <div class="ion-padding" slot="content">
-              Galeria de imagenes
-            </div>
-            <div class="ion-padding" slot="content">
-              Logotipos
+
+                <ion-button fill="clear" 
+                href="https://diabetes.mspbs.gov.py/" ion-button fill="clear">Noticias
+                </ion-button>
+
+                <ion-button fill="clear" 
+                href="https://www.mspbs.gov.py/calendario-de-salud.html" ion-button fill="clear">Calendario de Salud
+                </ion-button>
+
+                <ion-button fill="clear" 
+                href="https://www.mspbs.gov.py/donde-consulto.php" ion-button fill="clear">¿Donde puedo Consultar?
+                </ion-button>
+
+                <ion-button fill="clear" 
+                href="https://intranet.mspbs.gov.py/index.php" ion-button fill="clear">IntraNet
+                </ion-button>
+
+                <ion-button fill="clear" href="http://sistework.mspbs.gov.py/sistema/public.php" ion-button fill="clear">Mesa de entrada
+                </ion-button>
+
             </div>
           </ion-accordion>
-
-          <ion-accordion value="fourth">
-            <ion-item slot="header" color="primary">
-              <ion-label>Consultas</ion-label>
-            </ion-item>
-            <div class="ion-padding" slot="content">
-              <ion-button fill="clear" href="https://www.mspbs.gov.py/donde-consulto.php" ion-button fill="clear">¿Donde
-                puedo Consultar?</ion-button>
-            </div>
-            <div class="ion-padding" slot="content">
-              <ion-button fill="clear" href="https://intranet.mspbs.gov.py/index.php" ion-button fill="clear">IntraNet
-              </ion-button>
-            </div>
-            <div class="ion-padding" slot="content">
-              <ion-button fill="clear" href="http://sistework.mspbs.gov.py/sistema/public.php" ion-button fill="clear">
-                Mesa de entrada</ion-button>
-            </div>
-          </ion-accordion>
-
-          <ion-accordion value="fifth">
-            <ion-item slot="header" color="primary">
-              <ion-label>Institucional</ion-label>
-            </ion-item>
-            <div class="ion-padding" slot="content">
-              La Institución
-            </div>
-          </ion-accordion>
-
-        </ion-accordion-group>
-        <ion-item color="medium">
-          <ion-icon name="people-outline" slot="start"></ion-icon>
-          <ion-button (click)="presentActionShett()" color="green">Agendamiento</ion-button>
-        </ion-item>
+       </ion-accordion-group>
 
 
-        <ion-item color="medium">
-          <ion-icon name="people-outline" slot="start"></ion-icon>
-          <ion-button (click)="presentActionShett()" color="green">Cuenta</ion-button>
-        </ion-item>
 
-        <ion-item color="medium">
-          <ion-icon name="mail-outline" slot="start"></ion-icon>
-          <ion-button (click)="presentActionShett()" color="green">Perfil</ion-button>
-        </ion-item>
 
-        <ion-item color="medium">
-          <ion-icon name="build-outline" slot="start"></ion-icon>
-          <ion-button (click)="presentActionShett()" color="green">Soporte</ion-button>
-        </ion-item>
+
+
+
+
+
 
       </ion-list>
     </ion-content>

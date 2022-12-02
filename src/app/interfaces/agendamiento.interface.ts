@@ -1,4 +1,5 @@
-export interface Agendamineto{
+export interface Agendamiento{
+paciente: any;
     idagendamiento:number|null;
     fechaagendamiento:number|null;
     fecha_confirmacion:number|null;

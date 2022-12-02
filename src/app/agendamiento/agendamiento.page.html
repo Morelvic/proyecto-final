@@ -1,9 +1,57 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>agendamiento</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agendamiento</ion-title>
+    <ion-progress-bar *ngIf="cargandoAgendamiento" type="indeterminate"></ion-progress-bar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+  <ion-fab-button (click)="nuevo()"> 
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button> 
+  </ion-fab>
+  <ion-refresher slot="fixed" (ionRefresh)="cargarAgendamiento()">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
+  <ion-list>
+    <ion-item-sliding *ngFor=" let agendamientoof listaAgendamiento">
+      <ion-item button (click)="editar(agendamiento)">
+        <ion-note slot="start">{{agendamiento.idagendamiento}}</ion-note>
+        <ion-label>
+          <h1>{{agendamiento.fechaagendamiento}</h1>
+          <p>{{agendamiento.fecha_confirmacion}}</p>
+        </ion-label>
+        <ion-badge color="medium" slot="end">{{agendamiento.fecha_confirmacion} pag.</ion-badge>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="trash" (click)="ConfirmarEliminacion(agendamiento)"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    
+  </ion-list>
+  <ion-modal [isOpen]="modalVisible"(didDismiss)="modalVisible = false"(didPresent)="cargarDatosEditar()">
+    <ng-template>
+
+      <ion-header>
+        <ion-toolbar>
+        <ion-title>{{modoFormulario}} Agendamiento</ion-title>
+          <ion-buttons slot="end"(click)="modalVisible=false">
+            <ion-button>Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div style="padding: 10px;">
+          <app-formulario-agendamiento (recargar)="cargarAgendamiento()"></app-formulario-agendamiento>
+        </div>
+      </ion-content>
+    </ng-template>
+</ion-modal>
 </ion-content>

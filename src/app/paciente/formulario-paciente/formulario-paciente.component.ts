@@ -2,17 +2,17 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { Paciente } from 'src/app/interfaces/paciente.interface';
-import { Doctor } from 'src/app/interfaces/doctor.interface';
+
 import { PacienteService } from 'src/app/servicios/paciente.service';
-import { DoctorService } from 'src/app/servicios/doctor.service';
+
 
 @Component({
-  selector: 'app-formulario-doctor',
-  templateUrl: './formulario-doctor.component.html',
-  styleUrls: ['./formulario-doctor.component.scss'],
+  selector: 'app-formulario-paciente',
+  templateUrl: './formulario-paciente.component.html',
+  styleUrls: ['./formulario-paciente.component.scss'],
 })
 
-export class FormularioDoctorComponent implements OnInit {
+export class FormularioPacienteComponent implements OnInit {
 
   @Output()
   recargar = new EventEmitter<boolean>();
@@ -25,13 +25,10 @@ export class FormularioDoctorComponent implements OnInit {
     idautorCtrl: new FormControl<number>(null, Validators.required),
     paginasCtrl: new FormControl<number>(null, Validators.required),
   });
-doctor: any;
-listaDoctor: any;
 
   constructor(
     private servicioPaciente: PacienteService,
     private serviciosToast: ToastController,
-    private sevicioDoctor: DoctorService
   ) { }
   private cargarPaciente() {
     this.servicioPaciente.get().subscribe({
@@ -63,13 +60,16 @@ listaDoctor: any;
     }
   }
   private registrar() {
-    const doctor: Doctor = {
+    const paciente: Paciente = {
       ci: this.form.controls.ciCtrl.value,
       nombre: this.form.controls.nombreCtrl.value,
-      apellido: this.form.controls.nombreCtrl.value,
-      especialidad: this.form.controls.nombreCtrl.value
+      apellido: this.form.controls.apellidoCtrl.value,
+      telefono: this.form.controls.telefonoCtrl.value,
+      direccion: this.form.controls.direccionCtrl.value,
+      ciudad_idciudad: this.form.controls.ciudad_idciudadCtrl.value,
+     
     }
-    this.sevicioDoctor.post(doctor).subscribe({
+    this.servicioPaciente.post(paciente).subscribe({
       next: () => {
         this.recargar.emit(true);
         this.serviciosToast.create({
@@ -91,25 +91,27 @@ listaDoctor: any;
     });
   }
   private editar() {
-    const doctor: Doctor = {
+    const paciente: Paciente = {
       ci: this.form.controls.ciCtrl.value,
       nombre: this.form.controls.nombreCtrl.value,
       apellido: this.form.controls.nombreCtrl.value,
-      especialidad: this.form.controls.nombreCtrl.value
-      
+      telefono: this.form.controls.telefonoCtrl.value,
+      direccion: this.form.controls.direccionCtrl.value,
+      ciudad_idciudad: this.form.controls.ciudad_idciudadCtrl.value,
+    
     }
-    this.sevicioDoctor.put(doctor).subscribe({
+    this.servicioPaciente.put(paciente).subscribe({
       next: () => {
         this.recargar.emit(true);
         this.serviciosToast.create({
           header: 'Exito',
-          message: 'Se edito correctamente el doctor',
+          message: 'Se edito correctamente el paciente',
           duration: 2000,
           color: 'success'
         }).then(t => t.present());
       },
       error: (e) => {
-        console.error('Error al Editar doctor', e);
+        console.error('Error al Editar paciente', e);
         this.serviciosToast.create({
           header: 'Error al Editar',
           message: e.message,

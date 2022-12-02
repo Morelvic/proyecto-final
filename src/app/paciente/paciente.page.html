@@ -1,9 +1,59 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>paciente</ion-title>
+    <ion-progress-bar *ngIf="cargandoPaciente" type="indeterminate"></ion-progress-bar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+  <ion-fab-button (click)="nuevo()"> 
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button> 
+  </ion-fab>
+  <ion-refresher slot="fixed" (ionRefresh)="cargarPaciente()">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
+  <ion-list>
+    <ion-item-sliding *ngFor=" let pacienteof listaPaciente">
+      <ion-item button (click)="editar(paciente)">
+        <ion-note slot="start">{{pacienet.ci}}</ion-note>
+        <ion-label>
+          <h1>{{paciente.nombre}</h1>
+          <p>{{paciente.apellido}}</p>
+          <p>{{paciente.telefono}}</p>
+          <p>{{paciente.direccion}}</p>
+        </ion-label>
+        <ion-badge color="medium" slot="end">{{paciente.especialidad}} pag.</ion-badge>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="trash" (click)="ConfirmarEliminacion(paciente)"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    
+  </ion-list>
+  <ion-modal [isOpen]="modalVisible"(didDismiss)="modalVisible = false"(didPresent)="cargarDatosEditar()">
+    <ng-template>
+
+      <ion-header>
+        <ion-toolbar>
+        <ion-title>{{modoFormulario}} Paciente</ion-title>
+          <ion-buttons slot="end"(click)="modalVisible=false">
+            <ion-button>Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div style="padding: 10px;">
+          <app-formulario-paciente (recargar)="cargarPaciente()"></app-formulario-paciente>
+        </div>
+      </ion-content>
+    </ng-template>
+</ion-modal>
 </ion-content>
